@@ -1,25 +1,40 @@
-package employe;
-
-public class EmployeCommission extends Employe {
-	private double salaireComission;
+	package briefpoo;
+	
+	public class EmployeComission extends Employe {
+		private double salaireF;
+		private double Comission;
+		private double taux;
 		
 		
-		public EmployeCommission(String nom, String prenom, String date, double salaireComission) {
+	
+		public EmployeComission(String nom, String prenom, String date, double salaireF,double Comission, double taux ) {
 			super(nom, prenom, date);
-			this.salaireComission = salaireComission;
+			this.salaireF=salaireF;
+			this.Comission=Comission;
+			this.taux=taux;
 			
 		}
 	
 		public Double getSalaireComission() {
-			return salaireComission;
+			return Comission;
 		}
 	
 		public void setSalaireComission(Double salaireComission) {
-			this.salaireComission = salaireComission;
+			this.Comission = salaireComission;
 		}
 	
+	
+
+		@Override
+		public double calsalaire() {
+			// TODO Auto-generated method stub
+			return (salaireF+(Comission*taux));
+		}
+
 		@Override
 		public String toString() {
-			return super.toString() +" salaireComission = "+super.employeC(salaireComission);
+			return "\r\n Nom :       " + super.getNom() + "\r\n Prenom :   " + getPrenom() + "\r\n Date :      " + getDate() +  "\r\n Salaire :   " + calsalaire() + " DH";
+		}
+		
+	
 	}
-}
